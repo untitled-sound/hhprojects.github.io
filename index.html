@@ -378,6 +378,22 @@
             border-bottom: 3px solid var(--primary);
             position: relative;
         }
+        
+        /* Fallback styling when image fails to load */
+        .project-image[alt]::after {
+            content: attr(alt);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--primary);
+            text-align: center;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            width: 100%;
+            padding: 2rem;
+        }
 
         .project-content {
             padding: 2rem;
@@ -769,7 +785,7 @@
   | |
         </div>
         <div class="hero-content">
-            <h1 class="graffiti-text" data-text="NAME">HASHIM HAMEED</h1>
+            <h1 class="graffiti-text" data-text="HASHIM HAMEED">HASHIM HAMEED</h1>
             <p class="tagline">ENGINEER // ROBOTICIST // CREATOR</p>
             <a href="assets/Hashim Hameed - CV (16).pdf" class="resume-btn" download>↓ Download Resume</a>
         </div>
@@ -780,7 +796,7 @@
             <h2 data-text="PROJECTS">PROJECTS</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="/assets/darwins_carrying.jpg" alt="Collaborative Humanoid Manipulation" class="project-image">
+                    <img src="assets/darwins_carrying.jpg" alt="Collaborative Humanoid Manipulation" class="project-image">
                     <div class="project-content">
                         <span class="splatter" style="top: 25px; right: 10px; width: 12px; height: 12px;"></span>
                         <span class="splatter" style="bottom: 15px; left: 30px;"></span>
@@ -799,7 +815,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="/assets/UAV_delivery.png" alt="UAV Liquid Delivery" class="project-image">
+                    <img src="assets/UAV_delivery.png" alt="UAV Liquid Delivery" class="project-image">
                     <div class="project-content">
                         <span class="splatter" style="top: 10px; right: 15px;"></span>
                         <span class="splatter" style="bottom: 20px; left: 10px; width: 15px; height: 15px;"></span>
@@ -817,7 +833,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="/assets/tetris.png" alt="FPGA Tetris" class="project-image">
+                    <img src="assets/tetris.png" alt="FPGA Tetris" class="project-image">
                     <div class="project-content">
                         <span class="splatter" style="top: 15px; left: 20px;"></span>
                         <span class="splatter" style="bottom: 10px; right: 25px; width: 18px; height: 18px;"></span>
@@ -834,7 +850,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="/assets/distortion_pedal_circuit.png" alt="Audio Distortion Pedal" class="project-image">
+                    <img src="assets/distortion_pedal_circuit.png" alt="Audio Distortion Pedal" class="project-image">
                     <div class="project-content">
                         <span class="splatter" style="top: 20px; left: 15px; width: 14px; height: 14px;"></span>
                         <span class="splatter" style="bottom: 25px; right: 20px;"></span>
@@ -851,7 +867,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="/assets/nxt_soccer.png" alt="Lego NXT Soccer Robot" class="project-image">
+                    <img src="assets/nxt_soccer.png" alt="Lego NXT Soccer Robot" class="project-image">
                     <div class="project-content">
                         <span class="splatter" style="top: 12px; right: 18px;"></span>
                         <span class="splatter" style="bottom: 18px; left: 12px; width: 16px; height: 16px;"></span>
