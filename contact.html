@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Hashim Hameed</title>
+    <meta name="description" content="Get in touch with Hashim Hameed by email or LinkedIn.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Saira+Stencil+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+        <defs>
+            <!-- Spray-paint edge for large stencil type -->
+            <filter id="spray" x="-3%" y="-5%" width="106%" height="112%" color-interpolation-filters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="7" result="n"/>
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G" result="d"/>
+                <feGaussianBlur in="d" stdDeviation="1.1" result="b"/>
+                <feComponentTransfer in="b"><feFuncA type="linear" slope="2.6" intercept="-0.7"/></feComponentTransfer>
+            </filter>
+            <!-- Same idea, gentler, for small marks -->
+            <filter id="spray-fine" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="n"/>
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="2.5" xChannelSelector="R" yChannelSelector="G" result="d"/>
+                <feGaussianBlur in="d" stdDeviation="0.5" result="b"/>
+                <feComponentTransfer in="b"><feFuncA type="linear" slope="2.2" intercept="-0.5"/></feComponentTransfer>
+            </filter>
+        </defs>
+    </svg>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site-head">
+        <div class="bar">
+            <a class="mark" href="index.html" aria-label="Hashim Hameed, home">HH</a>
+            <nav aria-label="Primary">
+                <ul class="nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="contact.html" aria-current="page">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="page-head">
+            <h1>Contact</h1>
+            <p>Email is the fastest way to reach me.</p>
+            <div class="spray-rule" aria-hidden="true"></div>
+        </div>
+        <div class="rows">
+            <a class="row" href="mailto:hashimalihameed@gmail.com">
+                <span class="row-name">Email</span>
+                <span class="row-note">hashimalihameed@gmail.com</span>
+            </a>
+            <a class="row" href="https://www.linkedin.com/in/hashimahameed/" target="_blank" rel="noopener">
+                <span class="row-name">LinkedIn</span>
+                <span class="row-note">linkedin.com/in/hashimahameed</span>
+            </a>
+            <a class="row" href="assets/Hashim%20Hameed%20-%20CV%20(19).pdf" download>
+                <span class="row-name">Resume</span>
+                <span class="row-note">Download the CV as a PDF.</span>
+            </a>
+            <div class="row">
+                <span class="row-name">Based in</span>
+                <span class="row-note">Las Vegas, NV</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-foot">
+        <span>Hashim Hameed. Las Vegas, NV.</span>
+        <a href="mailto:hashimalihameed@gmail.com">hashimalihameed@gmail.com</a>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

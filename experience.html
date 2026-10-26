@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Hashim Hameed</title>
+    <meta name="description" content="Work and research experience: Los Alamos National Laboratory, UNLV Drones and Autonomous Systems Lab and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Saira+Stencil+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+        <defs>
+            <!-- Spray-paint edge for large stencil type -->
+            <filter id="spray" x="-3%" y="-5%" width="106%" height="112%" color-interpolation-filters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="7" result="n"/>
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G" result="d"/>
+                <feGaussianBlur in="d" stdDeviation="1.1" result="b"/>
+                <feComponentTransfer in="b"><feFuncA type="linear" slope="2.6" intercept="-0.7"/></feComponentTransfer>
+            </filter>
+            <!-- Same idea, gentler, for small marks -->
+            <filter id="spray-fine" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="n"/>
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="2.5" xChannelSelector="R" yChannelSelector="G" result="d"/>
+                <feGaussianBlur in="d" stdDeviation="0.5" result="b"/>
+                <feComponentTransfer in="b"><feFuncA type="linear" slope="2.2" intercept="-0.5"/></feComponentTransfer>
+            </filter>
+        </defs>
+    </svg>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site-head">
+        <div class="bar">
+            <a class="mark" href="index.html" aria-label="Hashim Hameed, home">HH</a>
+            <nav aria-label="Primary">
+                <ul class="nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="experience.html" aria-current="page">Experience</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="page-head">
+            <h1>Experience</h1>
+            <p>National lab internship, a research lab, a club team and a repair bench.</p>
+            <div class="spray-rule" aria-hidden="true"></div>
+        </div>
+        <div class="content">
+            <ol class="roles">
+                <li class="role">
+                    <div class="role-when">Jun 2026 – Aug 2026</div>
+                    <div>
+                        <h2>Robotics Engineering Intern</h2>
+                        <p class="role-org">Los Alamos National Laboratory, Los Alamos, NM</p>
+                        <ul>
+                            <li>Directed team of 4 in development of custom humanoid by defining observation and action spaces, meeting hardware and control constraints of linearly-actuated system</li>
+                            <li>Developed reinforcement learning pipeline using standalone Nvidia Newton engine, enabling GPU-accelerated parallelization of 4096 environments and computational load reduction of 15% in contrast to Isaac Lab</li>
+                            <li>Constructed 13-foot 29-DoF humanoid actor model considerate of linear actuation analogy, reducing timestep computation by 33% compared to comprehensive iteration</li>
+                            <li>Constructed weighted reward function for bipedal locomotion of humanoid actor resulting in 98% stable gait</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="role is-current">
+                    <div class="role-when">Nov 2023 – Present</div>
+                    <div>
+                        <h2>Research Member</h2>
+                        <p class="role-org">UNLV Drones and Autonomous Systems Lab, Las Vegas, NV</p>
+                        <ul>
+                            <li>Established reinforcement learning based simulation-to-real pipeline for humanoid robot, permitting minimal 20.28 ms delay from Nvidia IsaacGym simulation to 20-DOF humanoid</li>
+                            <li>Created autonomous vision-based collaborative rigid body detection and manipulation scripting for multiple 20-DOF humanoid robots, increasing stability by 32% compared to single actor manipulation</li>
+                            <li>Constructed PID based path-planning for UAV payload delivery, lowering trajectory error by 6% through experimentally determined constant values</li>
+                            <li>Transmitted geolocation data to UAV through developed Flutter SDK and Google API based application stack, reducing delivery time by 11%</li>
+                            <li>Utilized motion capture data through ROS for 2.4 GHz data transmission to mobile robot platform, improving relative angle calculation by 1.13 factor</li>
+                            <li>Built microcontroller-based game console controller emulator for autonomous mobile robot operation, reducing latency by 6.3%</li>
+                            <li>Developed OpenCV-based vision script for fire detection, communicating to extinguisher over I2C within 3 seconds</li>
+                            <li>Reduced waste through collaboration on subtractive manufacturing designs, cognisant of available financial and material resources, and formulated 17 designs prior to finalization</li>
+                            <li>Utilized ROS following independent and collaborative study, facilitating system communication and input therein to manipulator and Unity simulation with 4 degrees of freedom</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="role">
+                    <div class="role-when">Sep 2023 – Feb 2024</div>
+                    <div>
+                        <h2>Electronics/Programming Team Member</h2>
+                        <p class="role-org">UNLV Robotics Club, Las Vegas, NV</p>
+                        <ul>
+                            <li>Adapted power source allocation by recognizing draw of components, replacing the processing unit and battery to bolster operation time by calculated 12%</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="role">
+                    <div class="role-when">Jul 2023 – Jan 2024</div>
+                    <div>
+                        <h2>Computer Repair Technician</h2>
+                        <p class="role-org">Duke of Computers, Las Vegas, NV</p>
+                        <ul>
+                            <li>Repaired PCBs following multimeter-based diagnostics to find shorts, permitting further use of 7 devices</li>
+                            <li>Decreased diagnosis period by 18% following development of systematic troubleshooting methodology</li>
+                        </ul>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </main>
+
+    <footer class="site-foot">
+        <span>Hashim Hameed. Las Vegas, NV.</span>
+        <a href="mailto:hashimalihameed@gmail.com">hashimalihameed@gmail.com</a>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

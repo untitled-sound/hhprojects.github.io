@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Project title] - Hashim Hameed</title>
+    <meta name="description" content="[One-sentence summary of the project.]">
+    <meta name="robots" content="noindex"> <!-- Delete this line on a finished project page. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Saira+Stencil+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+        <defs>
+            <!-- Spray-paint edge for large stencil type -->
+            <filter id="spray" x="-3%" y="-5%" width="106%" height="112%" color-interpolation-filters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="7" result="n"/>
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G" result="d"/>
+                <feGaussianBlur in="d" stdDeviation="1.1" result="b"/>
+                <feComponentTransfer in="b"><feFuncA type="linear" slope="2.6" intercept="-0.7"/></feComponentTransfer>
+            </filter>
+            <!-- Same idea, gentler, for small marks -->
+            <filter id="spray-fine" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="n"/>
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="2.5" xChannelSelector="R" yChannelSelector="G" result="d"/>
+                <feGaussianBlur in="d" stdDeviation="0.5" result="b"/>
+                <feComponentTransfer in="b"><feFuncA type="linear" slope="2.2" intercept="-0.5"/></feComponentTransfer>
+            </filter>
+        </defs>
+    </svg>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site-head">
+        <div class="bar">
+            <a class="mark" href="index.html" aria-label="Hashim Hameed, home">HH</a>
+            <nav aria-label="Primary">
+                <ul class="nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html" aria-current="page">Projects</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <!--
+            PROJECT DOCUMENTATION TEMPLATE
+            1. Copy this file to project-<slug>.html (for example project-spotlight-cdpr.html).
+            2. Replace everything in [square brackets], and delete any section you don't need.
+               Keep each section's id in step with its entry in the contents list.
+            3. Delete the noindex line in <head> so the page can be found.
+            4. Link it from the matching card in projects.html.
+        -->
+        <div class="page-head">
+            <p class="crumbs"><a href="projects.html">Projects</a> / Audio Distortion Pedal</p>
+            <h1>Audio Distortion Pedal</h1>
+            <p></p>
+            <div class="doc-links">
+                <a class="link" href="https://www.youtube.com/watch?v=rtZpoOfIEeM&feature=youtu.be&themeRefresh=1">Demo video</a>
+            </div>
+            <div class="spray-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="content">
+            <figure class="figure doc-hero">
+                <div class="figure-frame"><img src="audio_distortion_pedal_documentation/distortion_pedal_circuit_ltspice_diagram.png" alt="Audio Distortion Pedal"></div>
+            </figure>
+
+            <div class="doc">
+                <nav class="toc" aria-label="On this page">
+                    <p>On this page</p>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#Function Breakdown">Function Breakdown</a></li>
+                        <li><a href="#implementation">Implementation</a></li>
+                        <li><a href="#issues">Issues</a></li>
+                        <li><a href="#reflection">Analysis</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                    </ul>
+                </nav>
+
+                <article class="doc-body">
+                    <section id="overview">
+                        <h2>Overview</h2>
+                        <p >This project serves to demonstrate the practical implementation of various components and concepts considered throughout the duration of the course, the ultimate goal within this context being the distortion of an analog waveform to achieve a desired set of audible tonal characteristics. An electric guitar utilizes electromagnetic induction to generate a signal from mechanical input(s) of metal strings vibrating at a particular frequency. This generated signal is passed into the distortion “pedal” circuit utilized, such being emulated in this instance primarily through use of operational amplifiers and diodes to amplify and clip the signal, as well as potentiometers to shape the perceived tone based on the generated frequency responses. Additionally, BJTs are utilized for the purpose of preserving signal quality and amplifying said signals at particular points in the circuit. 
+</p>
+                    </section>
+
+                    <section id="Function Breakdown">
+                        <h2>Circuit Diagram and Function Breakdown</h2>
+
+                        <h1 >1. Power Supply & Voltage Divider</h1>
+                        <p >Functionally, this segment serves to generate a 4.5V virtual ground or bias voltage, this being used at particular points within the overall circuit, allowing the small AC input signal to be superimposed on the DC level. This then enables the device to respond ideally linearly and produce a larger, though undistorted, signal output. Such maximizes the peak-to-peak output signal before transistors enter saturation or cutoff modes. </p>
+                        <p >The resistor serves to create the desired voltage division, the capacitors allow for stabilization of power supply lines in the case of utilizing sources such as consumer grade 9V batteries as is common for a majority of guitar pedals, and the diode protects against reverse polarity connections in the case power adapters are connected incorrectly. </p>
+                        <p >Note that the figure possesses labels for both 9V and 4.5V, though only the former is an input voltage, the latter only acts as a net label for use throughout the circuit. </p>
+
+                        <h1 >2. Input Buffer</h1>
+                        <ul >
+                            <li>V<sub>p</sub> = 8.337V</li>
+                            <li>V<sub>pp</sub> = 8.234V</li>
+                        </ul>
+                        <p >This step in circuit operates as an emitter-follower, with unity gain and high input impedance for the purpose of preserving signal quality and eliminating high frequency loss. . This buffer also helps isolate the guitar's input, reducing background noise. Additionally, there is a filtering out of low frequencies at around ~5Hz as a result of the capacitor, this being shown in the calculations below considerate of component impedance. The overall goal of this stage is to buffer the input signal, not yet considerate of the DC offset generated. </p>
+
+                        <ul >
+                            <li>f<sub>c</sub> = 1/(2πC<sub>1</sub>Z<sub>in</sub>) = 4.980Hz</li>
+                            <li> Z<sub>in</sub>= R<sub>1</sub> +(R<sub>2</sub>\β*R<sub>3</sub>) = ~R<sub>2</sub> = 470KΩ </li>
+                            <li> R<sub>3</sub> << R<sub>4</sub> & (β*10KΩ>>470KΩ) </li>
+                            <li> β = ~200</li>
+                        </ul>
+                        
+
+                        <h1 >3. Transistor Booster</h1>
+                        <ul >
+                            <li>V<sub>p</sub> = 8.337V</li>
+                            <li>V<sub>pp</sub> = 8.234V</li>
+                        </ul>
+                        <p >This stage applies some amount of fixed filtering and signal boosting prior to the signals’ input into the operational amplifier sequence, as this will allow for more acceptable levels of voltage in the circuit’s remainder. The mentioned filtering consists of two high-pass filters at the beginning of the segment to cut out bass harmonics which would produce undesirable auditory output waveforms. Calculations may be seen below: </p>
+
+                        <ul >
+                            <li>f<sub>1</sub> = 1/(2πC<sub>14</sub>R<sub>6</sub>) = 3.386Hz</li>
+                            <li>f<sub>2</sub> = 1/(2πC<sub>15</sub>Z<sub>30</sub>) = 23.405Hz</li>
+                        </ul>
+
+                        <p >The transistor acts as a common emitter amplifier and to some extent as a leaky integrator, with the voltage gain considerate of the topology being the collector resistance over the emitter resistance as seen below. </p>
+
+                        <ul >
+                            <li>A = R<sub>C</sub>/R<sub>E</sub> = 10k/22 = ~53dB</li>
+                        </ul>
+
+                        <p >What must be considered is the effect of the feedback resistor and capacitor which which serve to lower the gain to roughly 35dB, allowing for better immunity to noise/temperature as well as oscillations. The supply voltage of 9V creates this gain, with soft clipping resulting as seen in figure 7.</p>
+
+
+                        <h1 >4. Op-Amp Gain Sequence</h1>
+                        <ul >
+                            <li>V<sub>p</sub> = 5.789V</li>
+                            <li>V<sub>pp</sub> = 1.898V</li>
+                        </ul>
+                        <p >The operational amplifiers and following diodes are the most integral to the overall desired effect of the circuit. The beginning sees another high pass filter circuit which filters out a 23Hz frequency, though this filter is not intended as such, with the capacitor being used to couple the previous transistor gain stage and a moderate-high value resistor is required to bias the positive input pin of the first op-amp at a virtual ground. The diode prior to the op-amp is used to protect the input, as signals center roughly around 4.5V as a result of the bias and in case the signal coming from the previous stage attempts to drive the input below the negative rail, the diode clips at -0.7V, not allowing for dangerous voltages to be present at the non-inverting input. </p>
+
+                        <p >	The collector of the previous BJT is biased at roughly 5.8V, and drives the op-amp to a negative value if it goes into saturation, potentially damaging the component or at least taking time for the input stage to recover from being driven which causes undesired behavior in the output waveform. By the time the diode is conducted, the op-amp is already clipping, meaning that the first diode has minimal contribution to asymmetrical clipping or signal modification. </p>
+
+                        <p >	The first op-amp acts as a buffer, not adding or removing from the input signals, but interfacing the previous transistor booster with the second op-amp. This second op-amp is a non-inverting amplifier which boosts the signal up to 26.5 dB as seen below. </p>
+
+                        <ul >
+                            <li>G<sub>op-amp max</sub> = 1 + (VR<sub>13</sub>)/(R<sub>14</sub>) = 1 +(100K/4.7K) = 22.3 (26.5dB)</li>
+                            <li>G<sub>op-amp min</sub> = 1 + (0Ω)/( R13 ) = 1+(0K/4.7K) = 1 (0dB)</li>
+                        </ul>
+
+                        <p >	The clipping stage defines the output signal’s audible characteristics, providing a signature sound of “distortion”, built using two diodes in parallel with opposing orientations which shunt the signal to AC ground (4.5V), thus producing a hard clipping effect. This opposes soft clipping by placing the diodes on the feedback loop of the op-amp which are used in other commercially available effects pedals. The 100k  potentiometer simulated by two 50k resistors in sequence may be utilized to magnify the degree of this clipping. The position of the potentiometer additionally affects the frequencies cut by the high-pass filter as seen below. </p>
+
+                        <ul >
+                            <li>fc<sub>cmax</sub> = 1/(2πC<sub>7</sub>R<sub>13</sub>) = 1/(2*3.14*0.47u*4.7K) = 72Hz</li>
+                            <li>fc<sub>cmin</sub> = 1/(2πC<sub>7</sub>(R<sub>13</sub>+VR<sub>1</sub>)) = 1/(2*3.14*0.47u*104.7K) = 3Hz</li>
+                        </ul>
+
+                        <h1 >5. Tone & Level</h1>
+                        <ul >
+                            <li>V<sub>p</sub> = 4.610V</li>
+                            <li>V<sub>pp</sub> = 217.0mV</li>
+                        </ul>
+                        <p >The circuit utilizes a passive tone control style, taking out “middle” frequencies and attenuating the lows and highs in correspondence to potentiometer’s value. The segment consists of two frequency filters, a fixed low pass filter formed with C<sub>7</sub> and R<sub>13</sub> (f<sub>c</sub> = 234Hz) and a fixed high pass filter is formed using C<sub>8</sub> and R<sub>14</sub> (f<sub>c</sub> = 1063Hz), with the first 20k potentiometer (simulated by two 10k resistors in sequence) being used to mix the signals. The second 100k potentiometer (simulated by two 50k resistors in sequence) regulates the level by bleeding part of the signal to AC ground. </p>
+
+                        <h1 >6. Output Buffer</h1>
+                        <ul >
+                            <li>V<sub>p</sub> = 119.0mV</li>
+                            <li>V<sub>pp</sub> = 213.3mV</li>
+                        </ul>
+                        <p >	The final stage operates very similarly to the input buffer, with the intention herein being to keep a low output impedance for better signal integrity within the chain between the guitar’s pickups and ultimate amplifier. The unity gain buffer is implemented with an emitter-follower topology, with a 10K emitter resistor biasing from the 4.5V source of the two 1M resistors in parallel. C12 and R20 create a high pass filter (fc = 2.842Hz), though it serves to remove the DC levels so the transistor may operate as intended. C13 and R23 form a second high pass filter (fc = 1.6Hz) below the audible spectrum, with the purpose purely benign to remove the DC levels form the final output signal.</p>
+
+                    </section>
+
+
+                    <section id="implementation">
+                        <h2>Implementation and Testing</h2>
+                        <p >Note: All measurements utilize a 200mVpp input voltage source at a frequency of 1kHz</p>
+                        <figure class="figure">
+                            <div class="figure-frame"><img src="audio_distortion_pedal_documentation/distortion_pedal_circuit.png" alt="[Figure 1. Say what the reader should notice.]"></div>
+                            <figcaption></figcaption>
+                        </figure>
+                       <h1 >1. Input Buffer</h1>
+                       <img src="audio_distortion_pedal_documentation/output_waveforms_input_buffer.png" alt="[Figure 1. Say what the reader should notice.]">
+                       <img src="audio_distortion_pedal_documentation/frequency_responses_input_buffer.png" alt="[Figure 1. Say what the reader should notice.]">
+
+                        <h1 >2. Transistor Booster</h1>
+                       <img src="audio_distortion_pedal_documentation/frequency_responses_transistor_booster.png" alt="[Figure 1. Say what the reader should notice.]">
+                       <img src="audio_distortion_pedal_documentation/frequency_responses_transistor_booster.png" alt="[Figure 1. Say what the reader should notice.]">
+
+                       <h1 >3. Op-Amp Gain Sequence</h1>
+                       <img src="audio_distortion_pedal_documentation/output_waveforms_op_amp.png" alt="[Figure 1. Say what the reader should notice.]">
+                       <img src="audio_distortion_pedal_documentation/frequency_responses_op_amp.png" alt="[Figure 1. Say what the reader should notice.]">
+
+                       <h1 >4. Tone & Level</h1>
+                       <img src="audio_distortion_pedal_documentation/output_waveforms_tone.png" alt="[Figure 1. Say what the reader should notice.]">
+                       <img src="audio_distortion_pedal_documentation/frequency_responses_tone.png" alt="[Figure 1. Say what the reader should notice.]">
+
+                       <h1 >5. Output Buffer</h1>
+                       <img src="audio_distortion_pedal_documentation/output_waveforms_output_buffer.png" alt="[Figure 1. Say what the reader should notice.]">
+                       <img src="audio_distortion_pedal_documentation/frequency_responses_output_buffer.png" alt="[Figure 1. Say what the reader should notice.]">
+                    </section>
+
+                    <section id="issues">
+                        <h2>Issues Encountered</h2>
+                        <p >	The number of issues encountered throughout the project would be relatively minimal considering the research done beforehand to ensure compatibility and stability of components with one another as well as ensuring a base understanding of component/topological functions prior to experimentation. The two notable issues would be the simulation of a potentiometer within the LTspice software as well as an inability to attain components of particular values, namely capacitors. The former would hinder the analysis of the circuit’s outputs at various values, though time constraints would permit the approximation of middle-point values as discussed in respective sections. The latter would lead to a brief period of troubleshooting considering there being initial confusion regarding output of the waveform being dissimilar from those simulated, though this would ultimately prove to be the result of incorrectly labeled capacitors, or those that were too dissimilar in value. </p>
+
+
+        
+
+                    <section id="reflection">
+                        <h2>Analysis and Conclusion</h2>
+                        <p >The experimental outcome(s) at each segment would prove rather similar to those seen in simulation, with both the amplitude and shape of waveforms at each point being so to the point such may be explained easily by discrepancy in particular component specifications or values as well as the inherent differences between theoretical and experimental execution. Additionally, the frequency responses, whilst dissimilar in regards to value, see characteristic similarities at nearly every stage, though the consideration of such is inherently limited as a result of certain ranges falling outside the audible range. Additionally of note is the fact that the overall circuit appears to be non-linear in regards to phase in simulation, though the ability to comment on this is limited considering the lack of emphasis given to such throughout the course as well as within utilized sources. All said, the similarities between simulation and experimental execution would be rather assistive in regards to value verification and ensuring the project’s demonstration would operate as intended. </p>
+
+                        <p >This project would seemingly be an appropriate culmination of not only the combined practical applications of multiple electronic elements utilized throughout the course, but the considerations required for such regarding consumer electronics. This is so as protections and characteristics considerations would be less necessary in an academic context. Additionally, although there would be slight hindrance in the seeking of components, research regarding functionality therein would aid greatly in quickly remedying any discrepancies. </p>
+
+                        <p >The relative ubiquity of effect pedals amongst the musician community would allow for the design implemented herein to be extrapolated upon in practical future works if desired, demonstrating an understanding of the effects particular components have on a worked theoretical and practical level. </p>
+                    </section>
+
+                    <section id="resources">
+                        <h2>Resources</h2>
+                        <ul >
+                            <li><a href="https://www.premierguitar.com/diy/pedal-projects/boss-ds-1-mods">Premier Guitar - BOSS DS-1 Mods</a></li>
+                            <li><a href="https://www.freestompboxes.org/members/5thumbs/Build%20Your%20Own%20DS-1%20Distortion.pdf">Free Stomp Boxes</a></li>
+                            <li><a href="http://www.pedalhaven.com/two-easy-boss-ds-1-distortion-pedal-modifications/">Pedal Haven</a></li>
+                            <li><a href="https://www.physics.unlv.edu/~bill/PHYS483/op_amp_filt.pdf">UNLV Physics Department</a></li>
+                            <li><a href="https://www.electrosmash.com/big-muff-pi-analysis">Electrosmash - Big Muff Pi Analysis</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=2_Trmk6vOCE">How to Design a Distortion Pedal Circuit </a></li>
+                            <li><a href="https://www.youtube.com/watch?v=ZBHlN4wakxE&t=2241s"> How to Build a RAT Distortion Pedal For Under $27 </a></li>
+                            <li><a href="https://www.youtube.com/watch?v=SK2_B9hqgy4&t=1s"> Designing Your Overdrive/Distortion Pedal</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=otkW_q0_VIU&t=524s">ECE4448 L43</a></li>
+                        </ul>
+                    </section>
+
+                    <div class="pager">
+                        <a class="link" href="projects.html">Back to all projects</a>
+                        <a class="link" href="contact.html">Get in touch</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-foot">
+        <span>Hashim Hameed. Las Vegas, NV.</span>
+        <a href="mailto:hashimalihameed@gmail.com">hashimalihameed@gmail.com</a>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

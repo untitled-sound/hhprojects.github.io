@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Hashim Hameed</title>
+    <meta name="description" content="Selected robotics, FPGA and electronics projects by Hashim Hameed.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Saira+Stencil+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+        <defs>
+            <!-- Spray-paint edge for large stencil type -->
+            <filter id="spray" x="-3%" y="-5%" width="106%" height="112%" color-interpolation-filters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="7" result="n"/>
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G" result="d"/>
+                <feGaussianBlur in="d" stdDeviation="1.1" result="b"/>
+                <feComponentTransfer in="b"><feFuncA type="linear" slope="2.6" intercept="-0.7"/></feComponentTransfer>
+            </filter>
+            <!-- Same idea, gentler, for small marks -->
+            <filter id="spray-fine" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="n"/>
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="2.5" xChannelSelector="R" yChannelSelector="G" result="d"/>
+                <feGaussianBlur in="d" stdDeviation="0.5" result="b"/>
+                <feComponentTransfer in="b"><feFuncA type="linear" slope="2.2" intercept="-0.5"/></feComponentTransfer>
+            </filter>
+        </defs>
+    </svg>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site-head">
+        <div class="bar">
+            <a class="mark" href="index.html" aria-label="Hashim Hameed, home">HH</a>
+            <nav aria-label="Primary">
+                <ul class="nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html" aria-current="page">Projects</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="page-head">
+            <h1>Projects</h1>
+            <p>Robots, circuits and hardware, built from the mechanical design through the control code.</p>
+            <div class="spray-rule" aria-hidden="true"></div>
+        </div>
+        <div class="content">
+            <div class="projects">
+                <article class="card">
+                    <div class="card-media"><img src="assets/portfolio_cdpr.gif" alt="Spotlight CDPR" loading="lazy"></div>
+                    <div class="card-body">
+                        <h2>Spotlight CDPR</h2>
+                        <p>Using a Cable-Driven-Parallel-Robot for novel entertainment applications, exploring new methods of dynamic lighting via robust mechanical design and rigorous control systems.</p>
+                        <ul class="tags">
+                            <li>Cable-Driven-Parallel-Robot</li>
+                            <li>Design &amp; Manufacturing</li>
+                            <li>Controls</li>
+                        </ul>
+                    <div class="links">
+                        <a class="link" href="https://github.com/untitled-sound/SD_CDPR_Spotlight/tree/main">GitHub showcase</a>
+                        <!-- Once this project has a write-up, copy project-template.html and link it here:
+                        <a class="link" href="project-your-slug.html">Read the write-up</a> -->
+                    </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-media"><img src="assets/darwins_carrying.jpg" alt="Humanoid robots carrying an object together" loading="lazy"></div>
+                    <div class="card-body">
+                        <h2>Collaborative Humanoid Manipulation</h2>
+                        <p>Bridging the gap between identical actors and heterogeneous humanoids, and laying a foundation for more robust collaboration through compensation in differences.</p>
+                        <ul class="tags">
+                            <li>Humanoid Robotics</li>
+                            <li>ROS</li>
+                            <li>OpenCV</li>
+                            <li>Controls</li>
+                        </ul>
+                    <div class="links">
+                        <a class="link" href="https://ieeexplore.ieee.org/document/11393792/keywords#keywords">Publication</a>
+                        <!-- Once this project has a write-up, copy project-template.html and link it here:
+                        <a class="link" href="project-your-slug.html">Read the write-up</a> -->
+                    </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-media"><img src="assets/tetris.png" alt="FPGA Tetris on a VGA display" loading="lazy"></div>
+                    <div class="card-body">
+                        <h2>FPGA Tetris</h2>
+                        <p>Hardware implementation of Tetris using System Verilog on FPGA, featuring line clearing alongside a consistent 60Hz VGA display output for accurate and smooth emulation.</p>
+                        <ul class="tags">
+                            <li>System Verilog</li>
+                            <li>FPGA</li>
+                            <li>VGA Protocol</li>
+                        </ul>
+                    <div class="links">
+                        <a class="link" href="https://youtube.com/shorts/C48AgfLrn5g" target="_blank" rel="noopener">Demo</a>
+                        <a class="link" href="https://github.com/untitled-sound/hhprojects.github.io/blob/main/fpga_tetris_documentation" target="_blank" rel="noopener">Documentation</a>
+                        <!-- Once this project has a write-up, copy project-template.html and link it here:
+                        <a class="link" href="project-your-slug.html">Read the write-up</a> -->
+                    </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-media"><img src="assets/UAV_delivery.png" alt="UAV liquid delivery" loading="lazy"></div>
+                    <div class="card-body">
+                        <h2>UAV Liquid Delivery</h2>
+                        <p>Exploring the transport of non-rigid volumes through modern front-end application design and UAV control.</p>
+                        <ul class="tags">
+                            <li>Flutter/Dart</li>
+                            <li>Google API</li>
+                            <li>PID Control</li>
+                            <li>UAV</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-media"><img src="assets/distortion_pedal_circuit.png" alt="Audio distortion pedal circuit" loading="lazy"></div>
+                    <div class="card-body">
+                        <h2>Audio Distortion Pedal</h2>
+                        <p>Custom-built audio effect circuit with AC waveform clipping, with distinct variable distortion characteristics of gain, tone, and level through analog circuit design.</p>
+                        <ul class="tags">
+                            <li>Analog Electronics</li>
+                            <li>PCB Design</li>
+                            <li>Audio Engineering</li>
+                        </ul>
+                    <div class="links">
+                        <a class="link" href="https://youtu.be/rtZpoOfIEeM" target="_blank" rel="noopener">Demo</a>
+                        <a class="link" href="dist_pedal_doc.html" target="_blank" rel="noopener">Documentation</a>
+                        <!-- Once this project has a write-up, copy project-template.html and link it here:
+                        <a class="link" href="project-your-slug.html">Read the write-up</a> -->
+                    </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-media"><img src="assets/nxt_soccer.png" alt="Lego NXT soccer robot" loading="lazy"></div>
+                    <div class="card-body">
+                        <h2>Lego NXT Soccer Robot</h2>
+                        <p>Autonomous mobile robot platform built with Lego NXT, featuring microcontroller-based game controller emulation for reduced latency and motion capture precise soccer ball manipulation.</p>
+                        <ul class="tags">
+                            <li>Mobile Robotics</li>
+                            <li>Embedded Systems</li>
+                            <li>Control</li>
+                        </ul>
+                    <div class="links">
+                        <a class="link" href="https://www.daslhub.org/unlv/wiki/doku.php?id=lego_nxt_teleoperation_introduction&s[]=hameeh1&s[]=unlv&s[]=nevada&s[]=edu" target="_blank" rel="noopener">Tutorial 1</a>
+                        <a class="link" href="https://www.daslhub.org/unlv/wiki/doku.php?id=nxt_automation_implementation" target="_blank" rel="noopener">Tutorial 2</a>
+                        <a class="link" href="https://www.daslhub.org/unlv/wiki/doku.php?id=nxt_automation_alternative_practical_implementations" target="_blank" rel="noopener">Tutorial 3</a>
+                        <!-- Once this project has a write-up, copy project-template.html and link it here:
+                        <a class="link" href="project-your-slug.html">Read the write-up</a> -->
+                    </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-foot">
+        <span>Hashim Hameed. Las Vegas, NV.</span>
+        <a href="mailto:hashimalihameed@gmail.com">hashimalihameed@gmail.com</a>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
